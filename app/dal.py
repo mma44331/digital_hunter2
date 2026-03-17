@@ -1,5 +1,7 @@
 from mongo_db import get_data_find, get_data_aggr
 from maps_data.DigitalHunter_map import plot_map_with_geometry
+
+
 def get_shifting_quality_goals():
     query = ({
          'priority_level': { '$in': [1, 2] },
@@ -20,7 +22,8 @@ def get_finding_new_targets():
 
 
 def get_identifying_sleeping_cells():
-    pass
+    query = [{"$group": {"_id":'$entity_id'}}]
+    return get_data_aggr(query)
 
 
 def get_visualization_track(entity_id):
@@ -32,4 +35,11 @@ def get_visualization_track(entity_id):
         cords.append(cord)
     plot_map_with_geometry(cords)
 
+def get_escape_pattern_analysis():
+    query = [{}]
+    return get_data_aggr(query)
+
+def get_finding_associations_and_meetings():
+    query = [{}]
+    return get_data_aggr(query)
 

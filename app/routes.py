@@ -28,4 +28,14 @@ def get_Visualization(entity_id:str):
     res = dal.get_visualization_track(entity_id)
     return res
 
+@route.get("/escape_pattern_analysis")
+def escape_pattern_analysis():
+    res = dal.get_escape_pattern_analysis()
+    return res
+
+@route.get("finding_associations_and_meetings")
+def finding_associations_and_meetings():
+    res = dal.get_finding_associations_and_meetings()
+    return  res
+
 
