@@ -13,7 +13,7 @@ services:
       PYTHONUNBUFFERED: 1
       DB_NAME: target_bank
       COLL_NAME: targets
-      MONGO_URI: mongodb://mongo:27017
+      MONGO_URI: mongodb://host.docker.internal:27017
     depends_on:
       elastic:
         condition: service_healthy
@@ -42,11 +42,11 @@ services:
       timeout: 10s
       retries: 120
 
-  mongo:
-    image: mongo:latest
-    container_name: mongo
-    ports:
-      - "27018:27017"
+#  mongo:
+#    image: mongo:latest
+#    container_name: mongo
+#    ports:
+#      - "27018:27017"
 
 volumes:
   esdata:

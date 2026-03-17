@@ -8,6 +8,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY shards/ ./shards/
 
+COPY maps_data/ ./maps_data/
+
+
 COPY app/ .
 
 EXPOSE 8000
